@@ -1,69 +1,129 @@
 import Image from "next/image";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main className="min-h-screen font-sans text-[#1a2a52]">
+      <header className="mx-auto flex max-w-7xl items-center justify-between px-4 py-6">
+        <div className="text-2xl font-bold tracking-wide">BOXPACK</div>
+        <nav className="hidden items-center gap-8 text-sm font-medium md:flex">
+          <a href="#" className="hover:text-[#5a7bb5]">Услуги</a>
+          <a href="#" className="hover:text-[#5a7bb5]">Как это работает</a>
+          <a href="#" className="hover:text-[#5a7bb5]">Преимущества</a>
+          <a href="#" className="hover:text-[#5a7bb5]">Контакты</a>
+          <a href="#" className="rounded-full border border-[#1a2a52] px-5 py-2 hover:bg-[#1a2a52] hover:text-white">
+            Связаться
+          </a>
+        </nav>
+      </header>
+      <section className="mx-auto max-w-7xl px-4 py-12 md:py-20">
+        <div className="grid items-center gap-12 md:grid-cols-2">
+          <div>
+            <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-[#5a7bb5]">
+              Фулфилмент
+            </p>
+            <h1 className="mb-6 text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
+              Фулфилмент, который держит сроки и репутацию
+            </h1>
+            <p className="mb-8 max-w-lg text-gray-600">
+              Берём на себя приёмку, хранение, сборку и отправку заказов на маркетплейсы. Вы занимаетесь продажами — мы делаем всё остальное.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <a href="#" className="rounded-lg bg-[#1a2a52] px-8 py-3 font-semibold text-white hover:bg-[#2a3f6e]">
+                Оставить заявку
+              </a>
+              <a href="#" className="flex items-center gap-2 font-medium text-[#1a2a52] hover:underline">
+                Узнать подробнее →
+              </a>
+            </div>
+          </div>
+          <div className="flex aspect-video w-full items-center justify-center rounded-2xl bg-gray-200 text-gray-400">
+            Место под видео
+          </div>
+        </div>
+        <div className="mt-16 grid gap-6 sm:grid-cols-3">
+          {[
+            { num: "500+", label: "клиентов уже с нами" },
+            { num: "99,8%", label: "точность сборки заказов" },
+            { num: "24/7", label: "поддержка и контроль" },
+          ].map((item, i) => (
+            <div key={i} className="rounded-2xl bg-[#f0f4fa] p-8 text-center">
+              <p className="text-3xl font-bold text-[#1a2a52]">{item.num}</p>
+              <p className="mt-2 text-sm text-gray-600">{item.label}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section className="bg-[#f8fafc] py-20">
+        <div className="mx-auto max-w-7xl px-4">
+          <h2 className="mb-4 text-center text-3xl font-bold md:text-4xl">
+            Как начать работать с нами
+          </h2>
+          <p className="mx-auto mb-12 max-w-2xl text-center text-gray-600">
+            Семь простых шагов от заявки до первых отправленных заказов
           </p>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              { step: "ШАГ 1", title: "Оставляете заявку" },
+              { step: "ШАГ 2", title: "Получаете расчёт" },
+              { step: "ШАГ 3", title: "Заключаете договор" },
+              { step: "ШАГ 4", title: "Привозите товар" },
+              { step: "ШАГ 5", title: "Мы принимаем и размещаем" },
+              { step: "ШАГ 6", title: "Собираем и упаковываем" },
+              { step: "ШАГ 7", title: "Отправляем на маркетплейсы" },
+            ].map((item, i) => (
+              <div key={i} className="rounded-[10px] bg-white p-6 shadow-sm">
+                <p className="text-xs font-bold text-[#5a7bb5]">{item.step}</p>
+                <h3 className="mt-2 text-lg font-semibold">{item.title}</h3>
+              </div>
+              ))}
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+      <section className="py-20">
+        <div className="mx-auto max-w-7xl px-4">
+          <h2 className="mb-12 text-center text-3xl font-bold md:text-4xl">
+            Услуги фулфилмента
+          </h2>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              "Приёмка и хранение",
+              "Сборка и упаковка",
+              "Маркировка и стикеровка",
+              "Отгрузка на маркетплейсы",
+              "Обработка возвратов",
+              "Фотофиксация и видеонаблюдение",
+              "Личный кабинет и аналитика",
+            ].map((service, i) => (
+              <div key={i} className="rounded-xl border border-gray-200 p-8 transition hover:shadow-md">
+                <h3 className="text-lg font-semibold">{service}</h3>
+                <p className="mt-3 text-sm text-gray-500">
+                  Полный цикл работ с прозрачной отчётностью на каждом этапе.
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+      <section className="bg-[#1a2a52] py-20 text-white">
+        <div className="mx-auto max-w-7xl px-4">
+          <h2 className="mb-12 text-center text-3xl font-bold md:text-4xl">
+            Почему выбирают BOXPACK
+          </h2>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { title: "Скорость", desc: "Отгрузка в день заказа" },
+              { title: "Надёжность", desc: "SLA в договоре" },
+              { title: "Прозрачность", desc: "Онлайн-отчёты 24/7" },
+              { title: "Опыт", desc: "Более 500 клиентов" },
+            ].map((item, i) => (
+              <div key={i} className="rounded-xl bg-white/10 p-6 backdrop-blur">
+                <h3 className="text-lg font-semibold">{item.title}</h3>
+                <p className="mt-2 text-sm text-white/70">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }
